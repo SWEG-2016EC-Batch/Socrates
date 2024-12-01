@@ -3,9 +3,12 @@
 2. OUTPUT: result  
 3. OPERATION:   
       a. Reading the two integers x and Y  
-      b. compute result as x^Y  
-      result= x^Y  
-      c.display result  
+      b. initialize result as 
+      result= 1  
+      c.perform the task below for Y>0  
+      result= result*x  
+      Y--  
+      d. display result  
 # pseudocode  
  Step1: START  
  Step2: Read x and Y  
