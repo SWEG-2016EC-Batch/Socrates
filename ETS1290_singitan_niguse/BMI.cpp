@@ -1,9 +1,10 @@
- #include <iostream>
+#include <iostream>
 using namespace std;
 int main()
 {
+	char repeat;
+	do{
 	double height,weight,H,BMI;
-	for(int i=0;i<10;i++){
 	cout << "enter your height in meters:\n";
 	cin >> height;
 	cout << "enter your weight in kg:\n";
@@ -23,6 +24,10 @@ int main()
 	{
 		cout << "you are normal weight\n";
 	}
-	}
+	cout<<"press '1' to repeat and any key to terminate\n"<<endl;
+	cin>>repeat;
+	}while(repeat=='1');
+	cout<<"program successfully terminated,thanks for using"<<endl;
+	
 	return 0;
 }
