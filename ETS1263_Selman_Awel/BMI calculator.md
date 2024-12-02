@@ -28,7 +28,7 @@ Step10: Print under weight
 Step11: Go to step 13  
 Step12: Print normal weight  
 Step13: STOP  
-# flow chart   
+# flowchart   
 ```mermaid
   graph TD  
   A([START]) -->B[/Input weight W and heightH  
