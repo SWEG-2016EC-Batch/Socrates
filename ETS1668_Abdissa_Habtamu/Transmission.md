@@ -74,3 +74,20 @@ seconds = time % 60
 
 
 8. End
+
+   Flowchart
+
+```mermaid
+graph TD
+    A[Start] --> B[Prompt: "Enter the file size in bytes"]
+    B --> C[Input file_size]
+    C --> D[Calculate time = file_size / transmission_rate]
+    D --> E[Calculate days = time / 86400]
+    E --> F[Update time = time % 86400]
+    F --> G[Calculate hours = time / 3600]
+    G --> H[Update time = time % 3600]
+    H --> I[Calculate minutes = time / 60]
+    I --> J[Update time = time % 60]
+    J --> K[Set seconds = time]
+    K --> L[Display: "It takes days day: hours hour: minutes minute: seconds second"]
+    L --> M[End]
