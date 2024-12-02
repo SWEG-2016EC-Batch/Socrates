@@ -53,4 +53,13 @@ START
   PRINT "The final result is", result
 END
 
-
+Flowchart
+```mermaid
+graph TD
+    A[Start] --> B[Prompt: "Enter the base number"]
+    B --> C[Input x]
+    C --> D[Prompt: "Enter the exponent number"]
+    D --> E[Input y]
+    E --> F[Calculate result = pow(x, y)]
+    F --> G[Display: "The final result is result"]
+    G --> H[End]
