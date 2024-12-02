@@ -17,6 +17,7 @@ Step1: START
 Step2: Read height H in meters  
 Step3: Read weight W in kilograms  
 Step4: Calculate BMI as  
+  
                  BMI= W/H*H  
 Step5: print BMI  
 Step6: If BMI< 18.5, then go to step 10  

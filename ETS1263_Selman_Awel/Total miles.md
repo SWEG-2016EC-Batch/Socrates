@@ -13,8 +13,9 @@ c. displaying or printing Total miles(TM) as the number of miles the automobile 
 Step1: START  
 Step2: Prompt the user to input capacity of the fuel tanks in gallons (CFT)   
 Step3: prompt the user to input miles per gallon(MPG)   
-Step4: calculate Total miles(TM) as  
-TM= CFT*MPG   
+Step4: calculate Total miles(TM) as   
+
+         TM= CFT*MPG   
 Step5: print Total miles(TM) as the number of miles the automobile can be driven without refueling.  
 Step6: STOP  
 # flow chart  

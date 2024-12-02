@@ -14,7 +14,9 @@
  Step2: Read x and Y  
  Step3: Initialize result as  
     result=1  
- Step4: while(Y>0)  
+ Step4: calculate x the power of Y using
+
+         while(Y>0)    
          result=result*x   
          Y--  
 step5: Print result   
