@@ -3,12 +3,17 @@ using namespace std;
 
 int main()
 {
+    //declare all the variables with a sepecific identifier.
     int time=1;
     int days,hours,minutes,seconds;
     double file_size;
     int transmission_rate=960;
+
+    // promt the user to input the file size.
     cout<<"Enter the size of the file in bytes "<<endl;
     cin>> file_size;
+    // this is how the calculations is suppossed tobe done 
+    
 time= file_size/ transmission_rate;
 days= time/8600;
 time %=8600;
