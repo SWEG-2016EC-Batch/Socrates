@@ -1,6 +1,6 @@
 PSEUDO CODE 
 
-Step1: start
+Step1: start  
 Step2: read basic salary, worked hours, bonus rate, bonus, gross salary, pension, tax rate, tax, and net pay.
 Step3: if basic salary<=200
             Tax rate= 0
