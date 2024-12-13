@@ -28,7 +28,7 @@ int main() {
       cout<<"your tax rate is: "<<tax_rate<<endl;
       tax= tax_rate*gross_salary;
       net_pay= gross_salary-pension-tax;
-      cout<<"your net salary is:"<<net_salary<<endl;
+      cout<<"your net salary is:"<<net_pay<<endl;
     }else{
     pension=basic_salary*0.7;
     if(basic_salary<=200){
