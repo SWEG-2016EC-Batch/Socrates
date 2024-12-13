@@ -1,3 +1,5 @@
+//rectangle_with_number
+
 #include <iostream>
 using namespace std;
 
@@ -14,6 +16,8 @@ int main()
     }
     return 0;
 }
+//rectangle_with_alphabet
+
 #include <iostream>
 using namespace std;
 
