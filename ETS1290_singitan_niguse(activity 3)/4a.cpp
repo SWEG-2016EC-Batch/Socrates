@@ -37,6 +37,9 @@ int main()
     }
     return 0;
 }
+
+//triangle_to_right_with_number
+
 #include <iostream>
 using namespace std;
 
@@ -179,6 +182,7 @@ int main() {
     return 0;
 }
 //hollow_rectangle
+
 #include <iostream>
 using namespace std;
 
