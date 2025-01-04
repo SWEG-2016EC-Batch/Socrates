@@ -17,10 +17,10 @@ int main()
     int duration,penalitytime,returned,returnedday[12][30],daynums[12][30],rentdate[30][4],rentday,returndate[30][4],returnday;
     int carprice[30][4],penalityprice[30][4],penalityrate=500;
     int suvprice[6]={1000,2000,3000,4000,5000,6000};
-    int sportprice[6]={1,1,1,1,1,1};
-    int Luxaryprice[6]={1,1,1,1,1,1};
-    int economicprice[6]={1,1,1,1,1,1};
-    int convertibleprice[6]={1,1,1,1,1,1};
+    int sportprice[6]={6500,3500,11500,4500,5500,11000};
+    int Luxaryprice[6]={21000,15300,14000,1650,17000,12000};
+    int economicprice[6]={700,950,670,560,770,100};
+    int convertibleprice[6]={13000,17000,14000,15000,16000,17500};
     int totaltransaction=0,totalpenality=0,totalcarprice=0;
     int carnum,startday,endday,num,testid,id=0001,licensenum[30],idinfo,ID[30]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     int x=1,y=0,w,q,s=0,z=0;
