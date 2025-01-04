@@ -8,10 +8,10 @@ int main()
     string testname,cartorent,address[30];
     string nowrented[30][4];
     string suv[6]={"CHR","Tucson","Creta","Jatour","Bolero","Mahindra"};
-    string sport[6]={"bla","blu","bli","ble","blo","bol"};
-    string Luxary [6]={"bla","blu","bli","ble","blo","bol"};
-    string economic[6]={"bla","blu","bli","ble","blo","bol"};
-    string convertible[6]={"bla","blu","bli","ble","blo","bol"};
+    string sport[6]={"Ferrari SF90 Stradale","Porsche 911 Turbo S","Lamborghini Avendator","McLaren 720S","Aston Martin DB12","Bugatti Chiron"};
+    string Luxary [6]={"Rolls-Royce Phantom","Mercedes-Benz S-Class","Bentley Flying Spur","BMW 7 Series","Audi A8","Genesis G90"};
+    string economic[6]={"Toyota Corolla","Toyota Yaris","Honda Civic","Hyundai Elantra","Nissan Sentra","Kia Forte"};
+    string convertible[6]={"Ferrari Portofino M","Bentley Continental GT Convertible","Porsche 718 Boxster","Mazda MX-5 Miata","BMW Z4 Roadster","Lamborghini Huracán EVO Spyder"};
     string date[12],rentmonthar[30][4],rentmonth,returnmonthar[30][4],returnmonth,returnedmonth,returneddate[12][30];
     char reg,cartype,choice,choicetwo;
     int duration,penalitytime,returned,returnedday[12][30],daynums[12][30],rentdate[30][4],rentday,returndate[30][4],returnday;
