@@ -857,6 +857,14 @@ for(int i=0;i<12;i++){
                  else{
                     rentdate[num][j]==rentday;
                  }
+                 
+                   for(int i=0;i<12;i++){
+                if(rentmonth==date[i]){
+                        y=i;
+                        //date[0] is january and date[11] is december y will be the number of the rentmonth-1
+                    break;
+                }
+              }
 
               cout<< "when would you like to return the car? type as specified on the calender erlier!"<<endl;
               economicreturnmonth:
