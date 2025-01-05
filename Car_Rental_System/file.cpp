@@ -262,9 +262,12 @@ registration:
                  else{
                     returndate[num][j]==returnday;
                  }
-
-
-
+                 for(int i=0;i<12;i++){
+                if(rentmonth==date[i]){
+                        y=i;
+                    break;
+                }
+              }
 
                 for(int i=0;i<6;i++){
                 if(cartorent==suv[i]){
