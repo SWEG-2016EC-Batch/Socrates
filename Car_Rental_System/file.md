@@ -1,7 +1,7 @@
---------------------------------------Project name: Car Rental System-----------------------------------------------
+## Project name: Car Rental System 
 
 
-
+## pseudo code 
 
 
 Start the program.
@@ -13,6 +13,7 @@ create the main loop for the user interaction(registration,renting and returning
 Display user registration menu.
 handle user registration by classifying them into new users, old users and the admin(for the report).
 if the user successfully sign up and sign in ,then handle their car rental process.
+
 Display a choice menu to Select car type and model
 the user cannot rent more than 3 cars.
 Set rental and return dates
