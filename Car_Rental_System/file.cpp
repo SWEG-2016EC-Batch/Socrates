@@ -7,20 +7,20 @@ int main()
     string nameinfo,name[30]={"no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name"};
     string testname,cartorent,address[30],password="password",passwordcheck;
     string nowrented[30][4];
-    string suv[6]={"CHR","Tucson","Creta","Jatour","Bolero","Mahindra"};
-    string sport[6]={"bla","blu","bli","ble","blo","bol"};
-    string Luxary [6]={"bla","blu","bli","ble","blo","bol"};
-    string economic[6]={"bla","blu","bli","ble","blo","bol"};
-    string convertible[6]={"bla","blu","bli","ble","blo","bol"};
+    string suv[6]={"Aston Martin DBX707","Rolls-Royce Cullinan","Bentley Bentayga","Lamborghini Urus","Range Rover SVAutobiography","Mercedes-Maybach GLS 600"};
+    string sport[6]={"Bugatti Chiron","Ferrari SF90 Stradale","Porsche 911 Turbo S","Lamborghini Aventador","McLaren 720S","Aston Martin DB12"};
+    string Luxary [6]={"Genesis G90","Rolls-Royce Phantom","Mercedes-Benz S-Class","Bentley Flying Spur","BMW 7 Series","Audi A8"};
+    string economic[6]={"Toyota Vitz","Toyota Corolla","Honda Civic","Hyundai Elantra","Suzuki Ertiga","Kia Forte"};
+    string convertible[6]={"Lamborghini Huracán EVO Spyder","Ferrari Portofino M","Bentley Continental GT Convertible","Porsche 718 Boxster","Mazda MX-5 Miata","BMW Z4 Roadster"};
     string date[12],rentmonthar[30][4],rentmonth,returnmonthar[30][4],returnmonth,returnedmonth,returneddate[12][30];
     char reg,cartype,choice,choicetwo;
     int duration,penalitytime,returned,returnedday[12][30],daynums[12][30],rentdate[30][4],rentday,returndate[30][4],returnday;
     int carprice[30][4],penalityprice[30][4],penalityrate=500;
-    int suvprice[6]={1000,2000,3000,4000,5000,6000};
-    int sportprice[6]={1,1,1,1,1,1};
-    int Luxaryprice[6]={1,1,1,1,1,1};
-    int economicprice[6]={1,1,1,1,1,1};
-    int convertibleprice[6]={1,1,1,1,1,1};
+    int suvprice[6]={12000,20000,15000,15000,12000,10000};
+    int sportprice[6]={15000,22000,18000,15000,20000,13000};
+    int Luxaryprice[6]={20000,25000,23000,25000,17000,19000};
+    int economicprice[6]={2500,3000,4700,4200,5000,3500};
+    int convertibleprice[6]={24000,25000,20000,23000,17000,19000};
     int totaltransaction=0,totalpenality=0,totalcarprice=0;
     int carnum,startday,endday,num,testid,id=0001,licensenum[30],idinfo,ID[30]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     int x=1,y=0,w,q,s=0,z=0;
@@ -277,9 +277,51 @@ registration:
                  else{
                     returndate[num][j]==returnday;
                  }
+                 for(int i=0;i<12;i++){
+                if(rentmonth==date[i]){
+                        y=i;
+                    break;
+                }
+              }
+            
+            for(int i=0;i<12;i++){
+                if(returnmonth==date[i]){
+                        s=i;
+                    break;
+                }
 
+              }
+for(int i=0;i<12;i++){
+                    if(y==s){
+                            //y is number of rent month - 1 and s is number of return month - 1 later w is number of returned month - 1
+                        if(returnday>rentday){
+                        duration = returnday-rentday;
+                        }else{
+                        cout<<"return day can't be brfore or same day as rent day!"<<endl;
+                        goto suvreturnday;
+                        }
+                        break;
+                    }
+                    else if(y<s){
+                for(int k=1;k<=30;k++){
+                        if(i>=y && i<s && k>=rentday){
+                            z++;
+                        }
+                        else if(i==s&&k<returnday){
+                            z++;
+                        }
+                        if(i==s && k==returnday){
+                            break;
+                        }
+                }
 
-
+                }
+                else{
+                    cout<< "returning month can't be before renting month"<<endl;
+                    goto suvreturnmonth;
+                }
+                duration = z;
+                }
 
                 for(int i=0;i<6;i++){
                 if(cartorent==suv[i]){
@@ -313,6 +355,44 @@ registration:
                     returnedday[num][j]==returned;
                  }
 
+          for(int i=0;i<12;i++){
+                if(returnedmonth==date[i]){
+                        w=i;
+                    break;
+                }
+
+              }
+              for(int i=0;i<12;i++){
+                    if(s==w){
+                        if(returnday<=returned){
+                        penalitytime = returned-returnday;
+                        }else{
+                        cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                        break;
+                        }
+                    }
+                    else if(y==w&&s!=w){
+                      cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                      break;
+                    }
+                    else if(s<w){
+                for(int k=1;k<=30;k++){
+                        if(i>=s && i<w && k>=returnday){
+                            z++;
+                        }
+                        else if(i==w&&k<returned){
+                            z++;
+                        }
+                        if(i==w && k==returned){
+                            break;
+                        }
+                }
+                penalitytime = z;
+                }
+
+              }
+
+}
 
               for(int i=0;i<6;i++){
                 if(cartorent==suv[i]){
@@ -379,6 +459,15 @@ registration:
                     rentdate[num][j]==rentday;
                  }
 
+                 for(int i=0;i<12;i++){
+                if(rentmonth==date[i]){
+                        y=i;
+                        //date[0] is january and date[11] is december y will be the number of the rentmonth-1
+                    break;
+                }
+              }
+
+
               cout<< "when would you like to return the car? type as specified on the calender erlier!"<<endl;
               Luxaryreturnmonth:
                 cout<<"month: ";
@@ -403,6 +492,45 @@ registration:
                  else{
                     returndate[num][j]==returnday;
                  }
+ 
+                for(int i=0;i<12;i++){
+                if(returnmonth==date[i]){
+                        s=i;
+                    break;
+                }
+
+              }
+for(int i=0;i<12;i++){
+                    if(y==s){
+                            //y is number of rent month - 1 and s is number of return month - 1 later w is number of returned month - 1
+                        if(returnday>rentday){
+                        duration = returnday-rentday;
+                        }else{
+                        cout<<"return day can't be brfore or same day as rent day!"<<endl;
+                        goto Luxaryreturnday;
+                        }
+                        break;
+                    }
+                    else if(y<s){
+                for(int k=1;k<=30;k++){
+                        if(i>=y && i<s && k>=rentday){
+                            z++;
+                        }
+                        else if(i==s&&k<returnday){
+                            z++;
+                        }
+                        if(i==s && k==returnday){
+                            break;
+                        }
+                }
+
+                }
+                else{
+                    cout<< "returning month can't be before renting month"<<endl;
+                    goto Luxaryreturnmonth;
+                }
+                duration = z;
+                }
 
 
                 for(int i=0;i<6;i++){
@@ -436,6 +564,46 @@ registration:
                  else{
                     returnedday[num][j]==returned;
                  }
+
+             for(int i=0;i<12;i++){
+                if(returnedmonth==date[i]){
+                        w=i;
+                    break;
+                }
+
+              }
+              for(int i=0;i<12;i++){
+                    if(s==w){
+                        if(returnday<=returned){
+                        penalitytime = returned-returnday;
+                        }else{
+                        cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                        break;
+                        }
+                    }
+                    else if(y==w&&s!=w){
+                      cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                      break;
+                    }
+                    else if(s<w){
+                for(int k=1;k<=30;k++){
+                        if(i>=s && i<w && k>=returnday){
+                            z++;
+                        }
+                        else if(i==w&&k<returned){
+                            z++;
+                        }
+                        if(i==w && k==returned){
+                            break;
+                        }
+                }
+                penalitytime = z;
+                }
+
+              }
+
+}
+
 
               for(int i=0;i<6;i++){
                 if(cartorent==Luxary[i]){
@@ -498,6 +666,15 @@ registration:
                     rentdate[num][j]==rentday;
                  }
 
+            for(int i=0;i<12;i++){
+                if(rentmonth==date[i]){
+                        y=i;
+                        //date[0] is january and date[11] is december y will be the number of the rentmonth-1
+                    break;
+                }
+              }
+
+
               cout<< "when would you like to return the car? type as specified on the calender erlier!"<<endl;
               sportreturnmonth:
                 cout<<"month: ";
@@ -522,6 +699,44 @@ registration:
                  else{
                     returndate[num][j]==returnday;
                  }
+                 for(int i=0;i<12;i++){
+                if(returnmonth==date[i]){
+                        s=i;
+                    break;
+                }
+
+              }
+for(int i=0;i<12;i++){
+                    if(y==s){
+                            //y is number of rent month - 1 and s is number of return month - 1 later w is number of returned month - 1
+                        if(returnday>rentday){
+                        duration = returnday-rentday;
+                        }else{
+                        cout<<"return day can't be brfore or same day as rent day!"<<endl;
+                        goto sportreturnday;
+                        }
+                        break;
+                    }
+                    else if(y<s){
+                for(int k=1;k<=30;k++){
+                        if(i>=y && i<s && k>=rentday){
+                            z++;
+                        }
+                        else if(i==s&&k<returnday){
+                            z++;
+                        }
+                        if(i==s && k==returnday){
+                            break;
+                        }
+                }
+
+                }
+                else{
+                    cout<< "returning month can't be before renting month"<<endl;
+                    goto sportreturnmonth;
+                }
+                duration = z;
+                }
 
                 for(int i=0;i<6;i++){
                 if(cartorent==sport[i]){
@@ -554,6 +769,46 @@ registration:
                  else{
                     returnedday[num][j]==returned;
                  }
+            
+             
+for(int i=0;i<12;i++){
+                if(returnedmonth==date[i]){
+                        w=i;
+                    break;
+                }
+
+              }
+              for(int i=0;i<12;i++){
+                    if(s==w){
+                        if(returnday<=returned){
+                        penalitytime = returned-returnday;
+                        }else{
+                        cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                        break;
+                        }
+                    }
+                    else if(y==w&&s!=w){
+                      cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                      break;
+                    }
+                    else if(s<w){
+                for(int k=1;k<=30;k++){
+                        if(i>=s && i<w && k>=returnday){
+                            z++;
+                        }
+                        else if(i==w&&k<returned){
+                            z++;
+                        }
+                        if(i==w && k==returned){
+                            break;
+                        }
+                }
+                penalitytime = z;
+                }
+
+              }
+
+}
 
               for(int i=0;i<6;i++){
                 if(cartorent==sport[i]){
@@ -617,6 +872,14 @@ registration:
                  else{
                     rentdate[num][j]==rentday;
                  }
+                 
+                   for(int i=0;i<12;i++){
+                if(rentmonth==date[i]){
+                        y=i;
+                        //date[0] is january and date[11] is december y will be the number of the rentmonth-1
+                    break;
+                }
+              }
 
               cout<< "when would you like to return the car? type as specified on the calender erlier!"<<endl;
               economicreturnmonth:
@@ -642,6 +905,47 @@ registration:
                  else{
                     returndate[num][j]==returnday;
                  }
+                
+                 for(int i=0;i<12;i++){
+                if(returnmonth==date[i]){
+                        s=i;
+                    break;
+                }
+
+              }
+for(int i=0;i<12;i++){
+                    if(y==s){
+                            //y is number of rent month - 1 and s is number of return month - 1 later w is number of returned month - 1
+                        if(returnday>rentday){
+                        duration = returnday-rentday;
+                        }else{
+                        cout<<"return day can't be brfore or same day as rent day!"<<endl;
+                        goto economicreturnday;
+                        }
+                        break;
+                    }
+                    else if(y<s){
+                for(int k=1;k<=30;k++){
+                        if(i>=y && i<s && k>=rentday){
+                            z++;
+                        }
+                        else if(i==s&&k<returnday){
+                            z++;
+                        }
+                        if(i==s && k==returnday){
+                            break;
+                        }
+                }
+
+                }
+                else{
+                    cout<< "returning month can't be before renting month"<<endl;
+                    goto economicreturnmonth;
+                }
+                duration = z;
+                }
+
+
 
                 for(int i=0;i<6;i++){
                 if(cartorent==economic[i]){
@@ -674,6 +978,47 @@ registration:
                  else{
                     returnedday[num][j]==returned;
                  }
+               
+                   
+for(int i=0;i<12;i++){
+                if(returnedmonth==date[i]){
+                        w=i;
+                    break;
+                }
+
+              }
+              for(int i=0;i<12;i++){
+                    if(s==w){
+                        if(returnday<=returned){
+                        penalitytime = returned-returnday;
+                        }else{
+                        cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                        break;
+                        }
+                    }
+                    else if(y==w&&s!=w){
+                      cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                      break;
+                    }
+                    else if(s<w){
+                for(int k=1;k<=30;k++){
+                        if(i>=s && i<w && k>=returnday){
+                            z++;
+                        }
+                        else if(i==w&&k<returned){
+                            z++;
+                        }
+                        if(i==w && k==returned){
+                            break;
+                        }
+                }
+                penalitytime = z;
+                }
+
+              }
+
+}
+
 
               for(int i=0;i<6;i++){
                 if(cartorent==economic[i]){
@@ -737,6 +1082,14 @@ registration:
                  else{
                     rentdate[num][j]==rentday;
                  }
+                
+                  for(int i=0;i<12;i++){
+                if(rentmonth==date[i]){
+                        y=i;
+                        //date[0] is january and date[11] is december y will be the number of the rentmonth-1
+                    break;
+                }
+              }
 
               cout<< "when would you like to return the car? type as specified on the calender erlier!"<<endl;
               convertiblereturnmonth:
@@ -762,6 +1115,48 @@ registration:
                  else{
                     returndate[num][j]==returnday;
                  }
+                  
+
+                  for(int i=0;i<12;i++){
+                if(returnmonth==date[i]){
+                        s=i;
+                    break;
+                }
+
+              }
+for(int i=0;i<12;i++){
+                    if(y==s){
+                            //y is number of rent month - 1 and s is number of return month - 1 later w is number of returned month - 1
+                        if(returnday>rentday){
+                        duration = returnday-rentday;
+                        }else{
+                        cout<<"return day can't be brfore or same day as rent day!"<<endl;
+                        goto convertiblereturnday;
+                        }
+                        break;
+                    }
+                    else if(y<s){
+                for(int k=1;k<=30;k++){
+                        if(i>=y && i<s && k>=rentday){
+                            z++;
+                        }
+                        else if(i==s&&k<returnday){
+                            z++;
+                        }
+                        if(i==s && k==returnday){
+                            break;
+                        }
+                }
+
+                }
+                else{
+                    cout<< "returning month can't be before renting month"<<endl;
+                    goto convertiblereturnmonth;
+                }
+                duration = z;
+                }
+
+
 
                 for(int i=0;i<6;i++){
                 if(cartorent==convertible[i]){
@@ -794,6 +1189,47 @@ registration:
                  else{
                     returnedday[num][j]==returned;
                  }
+                 
+
+                 
+for(int i=0;i<12;i++){
+                if(returnedmonth==date[i]){
+                        w=i;
+                    break;
+                }
+
+              }
+              for(int i=0;i<12;i++){
+                    if(s==w){
+                        if(returnday<=returned){
+                        penalitytime = returned-returnday;
+                        }else{
+                        cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                        break;
+                        }
+                    }
+                    else if(y==w&&s!=w){
+                      cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                      break;
+                    }
+                    else if(s<w){
+                for(int k=1;k<=30;k++){
+                        if(i>=s && i<w && k>=returnday){
+                            z++;
+                        }
+                        else if(i==w&&k<returned){
+                            z++;
+                        }
+                        if(i==w && k==returned){
+                            break;
+                        }
+                }
+                penalitytime = z;
+                }
+
+              }
+
+}
 
               for(int i=0;i<6;i++){
                 if(cartorent==convertible[i]){
