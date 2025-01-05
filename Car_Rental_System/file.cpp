@@ -871,7 +871,7 @@ for(int i=0;i<12;i++){
                 }
                 }
                 }
-                
+
 
                 cout<<"when would you like to rent the car? type the date exactly as demonstrated!"<<endl;
                 for(int i=0;i<12;i++){
@@ -1081,6 +1081,18 @@ for(int i=0;i<12;i++){
                     else if(cartorent == convertible[i]){
                         break;
                     }
+                }
+                  
+                  for(int i=0;i<30;i++){
+                        for (int k=1;k<=3;k++){
+                if(nowrented[i][k]==cartorent){
+                    cout<< "sorry but this car is taken! choose another one: ";
+                    goto convertiblerent;
+                }
+                else if(i==29 && nowrented[i][3]!=cartorent){
+                        nowrented[num][j]=cartorent;
+                }
+                }
                 }
 
                 cout<<"when would you like to rent the car? type the date exactly as demonstrated!"<<endl;
