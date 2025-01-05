@@ -3,8 +3,6 @@
 
 
 
-
-
 step.1:Start the program.
 
 step.2:declare string data types as arrays and  variables as well.
