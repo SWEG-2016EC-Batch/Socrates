@@ -207,12 +207,12 @@ registration:
                 if(nowrented[i][k]==cartorent){
                     cout<< "sorry but this car is taken! choose another one: ";
                     goto suvrent;
-                    //checks if the car you rented is in the rented car array and tells you it is
+                   
                 }
                 else if(i==29 && nowrented[i][3]!=cartorent){
                         nowrented[num][j]=cartorent;
                         
-                        //saves the car in the rented car array if it's not rented
+                        
                 }
                 }}
 }
