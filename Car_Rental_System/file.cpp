@@ -109,7 +109,39 @@ registration:
     cin >> reg;
 
     if(reg=='1'){
-
+for(int i = 0; i<=30; i++){
+        if(ID[i]==0){
+        ID[i]= id;
+        id++;
+        //this code here is to create all the id when someone sign up
+        }
+        }
+        cout << "enter your name: ";
+        for(int i = 0; i<=30; i++){
+        if(name[i]=="no name"){
+        cin>>name[i];
+        //all the names are saved as no name and if someone sign up with there name it would change to it when another person sign up it will look for another spot with no name
+        cout << "enter your address: ";
+        cin >> address[i];
+        cout << "enter your license number: ";
+        licensenum:
+        cin >> licensenum[i];
+        //address and licensnum saved at the same index the name is saved at
+        cout<< "Your id is "<< ID[i]<<endl;
+        cout<< "don't forget it because you will use it to sign in!"<<endl;
+        cout<< "Your account is created sign in!"<<endl;
+        break;
+        }
+        }
+        for(int i=0;i<30;i++){
+            if(name[i]!="no name"){
+                    nowrented[i][0]=name[i];
+                    rentdate[i][0]=0;
+                    rentmonthar[i][0]=name[i];
+                    carprice[i][0]=0;
+            }
+        }
+        //for the arrays listed abouve the first column([i][0]) are used to save the names with the same index i if it's string or 0 if it's integer
 
     }
 
