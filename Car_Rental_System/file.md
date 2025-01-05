@@ -30,3 +30,30 @@ if the manager looking for the rentals of the current month.
 calculate and display the number of rentals.
 if the manager is looking for the average rentals per person.
 Calculate and display average rentals.
+## flow chart 
+``` mermaid
+flowchart TD
+    Start([START]) --> InputCustomerInfo[/INPUT Customer Info/]
+    InputCustomerInfo --> SignUpOrSignIn{"Sign Up or Sign In?"}
+    
+    SignUpOrSignIn -->|Sign Up| GenerateID["Generate Unique ID"]
+    GenerateID --> SaveCustomer["Save Customer Details"]
+    SaveCustomer --> DisplayCars{"Display Available Cars"}
+    
+    SignUpOrSignIn -->|Sign In| DisplayCars
+    DisplayCars --> SelectCar[/INPUT Selected Car/]
+    SelectCar --> ConfirmRental["Record Transaction"]
+    
+    ConfirmRental --> RentalPeriod["Track Rental Period"]
+    RentalPeriod --> CheckReturn{"IS Car Returned On Time?"}
+    CheckReturn -->|Yes| UpdateInventory["Update Availability"]
+    CheckReturn -->|No| CalcPenalty["Calculate Penalty"]
+    
+    CalcPenalty --> PrintPenalty["PRINT Total Penalty"]
+    PrintPenalty --> UpdateInventory
+    
+    UpdateInventory --> GenerateReports{"Generate Reports?"}
+    GenerateReports -->|Yes| TransactionReport["Print Transaction Report"]
+    TransactionReport --> End([STOP])
+    
+    GenerateReports -->|No| End
