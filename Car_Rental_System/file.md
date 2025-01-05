@@ -1,4 +1,5 @@
---------------------------------------Project name: Car Rental System-----------------------------------------------
+## Project name: Car Rental System 
+## pseudo code 
 
 
 
@@ -59,3 +60,30 @@ step.11: if the user select less than 3 cars
  step.27:Calculate and display average rentals.
   
 step.38: end the program.
+## flow chart 
+```mermaid
+flowchart TD
+    Start([START]) --> InputCustomerInfo[/INPUT Customer Info/]
+    InputCustomerInfo --> SignUpOrSignIn{"Sign Up or Sign In?"}
+    
+    SignUpOrSignIn -->|Sign Up| GenerateID["Generate Unique ID"]
+    GenerateID --> SaveCustomer["Save Customer Details"]
+    SaveCustomer --> DisplayCars{"Display Available Cars"}
+    
+    SignUpOrSignIn -->|Sign In| DisplayCars
+    DisplayCars --> SelectCar[/INPUT Selected Car/]
+    SelectCar --> ConfirmRental["Record Transaction"]
+    
+    ConfirmRental --> RentalPeriod["Track Rental Period"]
+    RentalPeriod --> CheckReturn{"IS Car Returned On Time?"}
+    CheckReturn -->|Yes| UpdateInventory["Update Availability"]
+    CheckReturn -->|No| CalcPenalty["Calculate Penalty"]
+    
+    CalcPenalty --> PrintPenalty["PRINT Total Penalty"]
+    PrintPenalty --> UpdateInventory
+    
+    UpdateInventory --> GenerateReports{"Generate Reports?"}
+    GenerateReports -->|Yes| TransactionReport["Print Transaction Report"]
+    TransactionReport --> End([STOP])
+    
+    GenerateReports -->|No| End
