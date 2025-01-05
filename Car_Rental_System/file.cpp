@@ -684,6 +684,44 @@ for(int i=0;i<12;i++){
                  else{
                     returndate[num][j]==returnday;
                  }
+                 for(int i=0;i<12;i++){
+                if(returnmonth==date[i]){
+                        s=i;
+                    break;
+                }
+
+              }
+for(int i=0;i<12;i++){
+                    if(y==s){
+                            //y is number of rent month - 1 and s is number of return month - 1 later w is number of returned month - 1
+                        if(returnday>rentday){
+                        duration = returnday-rentday;
+                        }else{
+                        cout<<"return day can't be brfore or same day as rent day!"<<endl;
+                        goto sportreturnday;
+                        }
+                        break;
+                    }
+                    else if(y<s){
+                for(int k=1;k<=30;k++){
+                        if(i>=y && i<s && k>=rentday){
+                            z++;
+                        }
+                        else if(i==s&&k<returnday){
+                            z++;
+                        }
+                        if(i==s && k==returnday){
+                            break;
+                        }
+                }
+
+                }
+                else{
+                    cout<< "returning month can't be before renting month"<<endl;
+                    goto sportreturnmonth;
+                }
+                duration = z;
+                }
 
                 for(int i=0;i<6;i++){
                 if(cartorent==sport[i]){
