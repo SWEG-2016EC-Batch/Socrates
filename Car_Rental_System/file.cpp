@@ -775,10 +775,95 @@ registration:
         cout<<"5 change penality rate\n";
         cout<<"anyt other number to go back to menue\n";
         cin>>choice;
-        if(choice=='1'){
+        if(choice=='1'){ int sum;
+            for (int i=0;i<30;i++){
+                for(int j=1;j<=3;j++){
+                    sum = carprice[i][j] + penalityprice[i][j];
+                    totaltransaction+=sum;
+                    totalpenality+=penalityprice[i][j];
+                    totalcarprice+=carprice[i][j];
+                }
+            }
+            cout<<"This months transaction is: "<<totaltransaction<<endl;
+            cout<<"This months penalities is: "<<totalpenality<<endl;
+            cout<<"This months earning without penalities is: "<<totalcarprice<<endl;
 
         }
-        else if(choice=='2'){
+        else if(choice=='2'){ cout<< "1 every customer"<<endl;
+                cout<< "2 specific customer"<<endl;
+                cin>>choicetwo;
+                if(choicetwo=='1'){
+                    cout<< "first line: name"<<endl;
+                    cout<< "second line: address"<<endl;
+                    cout<< "third line: license number"<<endl;
+                    cout<< "the rest: cars rented"<<endl;
+            for (int i=0;i<30;i++){
+                    if(name[i]!="no name"){
+                            cout<<endl;
+            cout<<name[i]<<endl;
+            cout<< address[i]<<endl;
+            cout<< licensenum[i]<<endl;
+                    }
+                    else{
+                        break;
+                    }
+                for(int j=1;j<=3;j++){
+                        cout<<nowrented[i][j]<<endl;
+                }
+            }
+        }
+
+        else if(choicetwo=='2'){
+            cout<< "1 to search by name\n";
+            cout<< "2 to search by ID\n";
+            cin>>choice;
+            if(choice=='1'){
+                cout<< "enter the name of the person: ";
+                cin>>nameinfo;
+                for(int i=0; i<30;i++){
+                    if(nameinfo==name[i]){
+                            cout<< "first line: name"<<endl;
+                    cout<< "second line: address"<<endl;
+                    cout<< "third line: license number"<<endl;
+                    cout<< "the rest: cars rented"<<endl;
+                    cout<<endl;
+                        cout<<name[i]<<endl;
+            cout<< address[i]<<endl;
+            cout<< licensenum[i]<<endl;
+            for(int j=1;j<=3;j++){
+                        cout<<nowrented[i][j]<<endl;
+                }
+                break;
+                    }
+                    else if(i==29 && nameinfo!=name[i]){
+                        cout << "such name doesn't exist"<<endl;
+                    }
+                }
+            }
+            else if(choice == '2'){
+                cout<< "enter the id of the person: ";
+                cin>>idinfo;
+                for(int i=0; i<30;i++){
+                    if(idinfo==ID[i] && name[i]!="no name"){
+                            cout<< "first line: name"<<endl;
+                    cout<< "second line: address"<<endl;
+                    cout<< "third line: license number"<<endl;
+                    cout<< "the rest: cars rented"<<endl;
+                    cout<<endl;
+                        cout<<name[i]<<endl;
+            cout<< address[i]<<endl;
+            cout<< licensenum[i]<<endl;
+            for(int j=1;j<=3;j++){
+                        cout<<nowrented[i][j]<<endl;
+                }
+                break;
+                    }
+                    else if(i==29 && (idinfo!=ID[i]||name[i]=="no name")){
+                        cout << "such ID doesn't exist"<<endl;
+                    }
+                }
+            }
+        }
 
         }
         else if(choice=='3'){
