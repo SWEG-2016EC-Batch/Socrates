@@ -963,6 +963,47 @@ for(int i=0;i<12;i++){
                  else{
                     returnedday[num][j]==returned;
                  }
+               
+                   
+for(int i=0;i<12;i++){
+                if(returnedmonth==date[i]){
+                        w=i;
+                    break;
+                }
+
+              }
+              for(int i=0;i<12;i++){
+                    if(s==w){
+                        if(returnday<=returned){
+                        penalitytime = returned-returnday;
+                        }else{
+                        cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                        break;
+                        }
+                    }
+                    else if(y==w&&s!=w){
+                      cout<<"You will still pay the same amount even if you return it earlier!"<<endl;
+                      break;
+                    }
+                    else if(s<w){
+                for(int k=1;k<=30;k++){
+                        if(i>=s && i<w && k>=returnday){
+                            z++;
+                        }
+                        else if(i==w&&k<returned){
+                            z++;
+                        }
+                        if(i==w && k==returned){
+                            break;
+                        }
+                }
+                penalitytime = z;
+                }
+
+              }
+
+}
+
 
               for(int i=0;i<6;i++){
                 if(cartorent==economic[i]){
