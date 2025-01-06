@@ -179,7 +179,7 @@ for(int i = 0; i<=30; i++){
             }
         }
         //to check if the person trying to log in knows the id
-}
+
 
         carnum:
         cout << "how many cars do you want to rent:";
@@ -423,7 +423,7 @@ for(int i=0;i<12;i++){
 
               }
 
-}
+
 
               for(int i=0;i<6;i++){
                 if(cartorent==suv[i]){
@@ -645,7 +645,7 @@ for(int i=0;i<12;i++){
 
               }
 
-}
+
 
 
               for(int i=0;i<6;i++){
@@ -863,7 +863,7 @@ for(int i=0;i<12;i++){
 
               }
 
-}
+
 
               for(int i=0;i<6;i++){
                 if(cartorent==sport[i]){
@@ -1085,7 +1085,7 @@ for(int i=0;i<12;i++){
 
               }
 
-}
+
 
 
               for(int i=0;i<6;i++){
@@ -1309,7 +1309,7 @@ for(int i=0;i<12;i++){
 
               }
 
-}
+
 
               for(int i=0;i<6;i++){
                 if(cartorent==convertible[i]){
