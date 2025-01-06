@@ -7,11 +7,11 @@ int main()
     string nameinfo,name[30]={"no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name","no name"};
     string testname,cartorent,address[30],password="password",passwordcheck;
     string nowrented[30][4];
-    string suv[6]={"Aston Martin DBX707","Rolls-Royce Cullinan","Bentley Bentayga","Lamborghini Urus","Range Rover SVAutobiography","Mercedes-Maybach GLS 600"};
-    string sport[6]={"Bugatti Chiron","Ferrari SF90 Stradale","Porsche 911 Turbo S","Lamborghini Aventador","McLaren 720S","Aston Martin DB12"};
-    string Luxary [6]={"Genesis G90","Rolls-Royce Phantom","Mercedes-Benz S-Class","Bentley Flying Spur","BMW 7 Series","Audi A8"};
-    string economic[6]={"Toyota Vitz","Toyota Corolla","Honda Civic","Hyundai Elantra","Suzuki Ertiga","Kia Forte"};
-    string convertible[6]={"Lamborghini Huracán EVO Spyder","Ferrari Portofino M","Bentley Continental GT Convertible","Porsche 718 Boxster","Mazda MX-5 Miata","BMW Z4 Roadster"};
+    string suv[6]={"Aston","RRoyce","Bentley","Lamborghini","RRover","Mercedes"};
+    string sport[6]={"Bugatti","Ferrari","Porsche","LamborghiniA","McLaren","AstonM"};
+    string Luxary [6]={"Genesis","RRoyceP","MercedesB","BentleyF","BMW7","Audi"};
+    string economic[6]={"Toyota","Toyota","Honda","Hyundai","Suzuki","Kia"};
+    string convertible[6]={"Lamborghin","FerrariP","BentleyCG","Porsche78","Mazda","BMWZ4"};
     string date[12],rentmonthar[30][4],rentmonth,returnmonthar[30][4],returnmonth,returnedmonth,returneddate[12][30];
     char reg,cartype,choice,choicetwo;
     int duration,penalitytime,returned,returnedday[12][30],daynums[12][30],rentdate[30][4],rentday,returndate[30][4],returnday;
